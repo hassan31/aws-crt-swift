@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
 
   # Define the base source files and exclude unnecessary ones
   spec.source_files = "Source/AwsCommonRuntimeKit/**/*.{swift,h,m}"
-  spec.exclude_files = [
+  spec.exclude_files = %w[
     tests cmake CONTRIBUTING.md LICENSE format-check.py NOTICE builder.json CMakeLists.txt README.md
   ]
 

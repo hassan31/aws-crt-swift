@@ -25,6 +25,7 @@ Pod::Spec.new do |spec|
   # Pod Target settings
   spec.pod_target_xcconfig = {
     "HEADER_SEARCH_PATHS" => "aws-common-runtime/**",
+    "CLANG_SEARCH_PATHS"  => "$(PODS_TARGET_SRCROOT)/aws-common-runtime/**",
     "OTHER_SWIFT_FLAGS"   => "-DAWS_APPSTORE_SAFE -DDEBUG_BUILD"
   }
   
@@ -40,6 +41,7 @@ Pod::Spec.new do |spec|
     subspec.exclude_files = ["aws-common-runtime/aws-c-common/source/arch/intel/*", "aws-common-runtime/aws-c-common/source/arch/arm/*"]
     subspec.public_header_files = "aws-common-runtime/aws-c-common/**/*.h"
     subspec.dependency "AwsCommonRuntimeKit/AwsCPlatformConfig"
+    #  subspec.module_map = "aws-common-runtime/aws-c-common/module.modulemap"
   end
 
   # AwsCSdkUtils target
